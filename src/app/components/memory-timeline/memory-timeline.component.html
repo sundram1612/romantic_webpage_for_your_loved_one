@@ -1,0 +1,42 @@
+<section id="memory-timeline"
+    class="py-20 min-h-screen bg-deep-night flex flex-col justify-center relative overflow-hidden">
+
+    <div class="container mx-auto px-4 z-10 relative">
+        <h2
+            class="text-4xl md:text-6xl font-romantic text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-soft-lavender to-romantic-pink animate-pulse-slow py-4 leading-relaxed">
+            Our Story So Far...
+        </h2>
+
+        <div class="overflow-x-auto pb-12 flex gap-8 snap-x snap-mandatory px-4 md:px-0 scrollbar-hide">
+            @for (memory of memories; track memory.title) {
+            <div #memoryCard
+                class="memory-card min-w-[300px] md:min-w-[400px] bg-glass-white backdrop-blur-md border border-white/20 rounded-2xl p-8 flex-shrink-0 snap-center transform transition-all duration-700 opacity-0 translate-y-10 hover:scale-105 hover:rotate-1 hover:border-romantic-pink/50 group">
+
+                <div
+                    class="text-6xl mb-4 group-hover:animate-wiggle transform transition-transform duration-300 group-hover:scale-110 block text-center">
+                    {{ memory.icon }}
+                </div>
+
+                <div class="text-sm font-semibold text-glowing-peach uppercase tracking-widest mb-2 text-center">
+                    {{ memory.date }}
+                </div>
+
+                <h3
+                    class="text-2xl font-romantic text-white mb-4 text-center group-hover:text-romantic-pink transition-colors">
+                    {{ memory.title }}
+                </h3>
+
+                <p class="text-gray-300 text-center leading-relaxed group-hover:text-white transition-colors">
+                    {{ memory.description }}
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div
+        class="absolute top-1/4 left-0 w-64 h-64 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float">
+    </div>
+    <div class="absolute bottom-1/4 right-0 w-64 h-64 bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"
+        style="animation-duration: 8s;"></div>
+</section>
